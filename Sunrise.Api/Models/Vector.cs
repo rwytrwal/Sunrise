@@ -13,15 +13,15 @@ namespace SunriseVector.Models
         /// <summary>
         /// SunriseVector AzimutDecimal
         /// </summary>
-        public decimal VectorX { get; set; }
+        public decimal AzimutDecimal { get; set; }
         /// <summary>
         /// SunriseVector ZenithDecimal
         /// </summary>        
-        public decimal VectorY { get; set; }
+        public decimal ZenithDecimal { get; set; }
         /// <summary>
         /// SunriseVector ElevationDecimal
         /// </summary>        
-        public decimal VectorZ { get; set; }
+        public decimal ElevationDecimal { get; set; }
 
     }
 
