@@ -1,6 +1,4 @@
 ﻿using System;
-using System.Data;
-using System.Globalization;
 using Sunrise.Calculate;
 
 
@@ -19,15 +17,9 @@ namespace Sunrise
         {
             ConsoleOut runMain = new ConsoleOut();
             ComputeVector calculateVector = new ComputeVector();
-            DateTime calendarData = new DateTime(2003, 1, 1, 16, 0, 0);
-            Console.WriteLine("czas1" + calendarData.ToString());
-            Console.WriteLine(DateTime.Now.ToString("%K"));
+            DateTime calendarData = new DateTime(2016, 7, 28, 16, 0, 0);
             calendarData = calendarData.ToUniversalTime();
-            Console.WriteLine("czas2" + calendarData.ToString());
-            TimeZone zone = TimeZone.CurrentTimeZone;
-            // Get offset.
-            TimeSpan offset = zone.GetUtcOffset(DateTime.Now);
-            calendarData.Hour = calendarData.Hour + offset;
+
             PositionCoordinate positionCoordinate = new PositionCoordinate
             {
                 UdtLocationdLatitude = 0,
@@ -38,7 +30,7 @@ namespace Sunrise
                         positionCoordinate.UdtLocationdLatitude,
                         positionCoordinate.UdtLocationdLongitude);
             
-            runMain.PrintOutput(PrintSunVector.X, PrintSunVector.Y, PrintSunVector.Z);
+            runMain.PrintOutput(PrintSunVector.AzimutDecimal, PrintSunVector.ZenithDecimal, PrintSunVector.ElevationDecimal);
 
             Console.Read();
         }

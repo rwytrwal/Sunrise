@@ -21,15 +21,14 @@ namespace SunriseVector.Controllers
 
         [Route("data")]
         [HttpGet]
-        public SunVector GetVector(string time, int latitude, int longitude)
+        public SunVector GetVector(string time, double latitude, double longitude)
         {
-            string format = "yyyy-MM-ddTHH:mm:ss";
-
+            string isoFormatDate = "yyyy-MM-ddTHH:mm:ss";
             try
             {
-                DateTime _newData = DateTime.ParseExact(time, format, new CultureInfo("en-US"));
-                
-                return _compute.SunPos(_newData,
+                DateTime newData = DateTime.ParseExact(time, isoFormatDate, new CultureInfo("en-US"));
+                newData = newData.ToUniversalTime();
+                return _compute.SunPos(newData,
                     _data.UdtLocationdLatitude = latitude,
                     _data.UdtLocationdLongitude = longitude);       
 

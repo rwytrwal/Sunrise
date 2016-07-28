@@ -22,9 +22,9 @@ namespace Sunrise.Test
             decimal expectedY = 151.526M;
             decimal expectedZ = -61.526M;
 
-            Assert.AreEqual(expectedX, vector.X);
-            Assert.AreEqual(expectedY, vector.Y);
-            Assert.AreEqual(expectedZ, vector.Z);
+            Assert.AreEqual(expectedX, vector.AzimutDecimal);
+            Assert.AreEqual(expectedY, vector.ZenithDecimal);
+            Assert.AreEqual(expectedZ, vector.ElevationDecimal);
             
         }
 
@@ -39,9 +39,9 @@ namespace Sunrise.Test
             decimal expectedY = 151.5241M;
             decimal expectedZ = -61.5241M;
 
-            Assert.AreEqual(expectedX, vector.X);
-            Assert.AreEqual(expectedY, vector.Y);
-            Assert.AreEqual(expectedZ, vector.Z);
+            Assert.AreEqual(expectedX, vector.AzimutDecimal);
+            Assert.AreEqual(expectedY, vector.ZenithDecimal);
+            Assert.AreEqual(expectedZ, vector.ElevationDecimal);
 
         }
 
@@ -57,9 +57,9 @@ namespace Sunrise.Test
             decimal expectedY = 151.2497M;
             decimal expectedZ = -61.2497M;
 
-            Assert.AreEqual(expectedX, vector.X);
-            Assert.AreEqual(expectedY, vector.Y);
-            Assert.AreEqual(expectedZ, vector.Z);
+            Assert.AreEqual(expectedX, vector.AzimutDecimal);
+            Assert.AreEqual(expectedY, vector.ZenithDecimal);
+            Assert.AreEqual(expectedZ, vector.ElevationDecimal);
 
         }
 

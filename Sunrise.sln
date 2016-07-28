@@ -11,8 +11,6 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Sunrise.Api", "SunriseVecto
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Sunrise.Test", "Sunrise.Test\Sunrise.Test.csproj", "{2890E561-139B-4414-9A07-EC7FC7FD6F8D}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Sunrise.WebApi", "Sunrise.WebApi\Sunrise.WebApi.csproj", "{38D061F2-84A8-4326-8E41-8EA357A5D07A}"
-EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -35,10 +33,6 @@ Global
 		{2890E561-139B-4414-9A07-EC7FC7FD6F8D}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{2890E561-139B-4414-9A07-EC7FC7FD6F8D}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{2890E561-139B-4414-9A07-EC7FC7FD6F8D}.Release|Any CPU.Build.0 = Release|Any CPU
-		{38D061F2-84A8-4326-8E41-8EA357A5D07A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{38D061F2-84A8-4326-8E41-8EA357A5D07A}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{38D061F2-84A8-4326-8E41-8EA357A5D07A}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{38D061F2-84A8-4326-8E41-8EA357A5D07A}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

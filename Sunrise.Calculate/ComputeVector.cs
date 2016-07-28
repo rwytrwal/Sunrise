@@ -65,9 +65,9 @@ namespace Sunrise.Calculate
             udtSunCoordinatesdZenithAngle = (udtSunCoordinatesdZenithAngle + dParallax) / Rad;
 
 
-            PrintSunVector.X = Convert.ToDecimal(Math.Round(_udtSunCoordinatesdAzimuth, 4));
-            PrintSunVector.Y = Convert.ToDecimal(Math.Round(udtSunCoordinatesdZenithAngle, 4));
-            PrintSunVector.Z = Convert.ToDecimal(Math.Round(90 - udtSunCoordinatesdZenithAngle, 4));
+            PrintSunVector.AzimutDecimal = Convert.ToDecimal(Math.Round(_udtSunCoordinatesdAzimuth, 4));
+            PrintSunVector.ZenithDecimal = Convert.ToDecimal(Math.Round(udtSunCoordinatesdZenithAngle, 4));
+            PrintSunVector.ElevationDecimal = Convert.ToDecimal(Math.Round(90 - udtSunCoordinatesdZenithAngle, 4));
 
 
             return PrintSunVector;
@@ -78,9 +78,9 @@ namespace Sunrise.Calculate
 
     public class SunVector
     {
-        public decimal X { get; set; }
-        public decimal Y { get; set; }
-        public decimal Z { get; set; }
+        public decimal AzimutDecimal { get; set; }
+        public decimal ZenithDecimal { get; set; }
+        public decimal ElevationDecimal { get; set; }
 
 
     }
