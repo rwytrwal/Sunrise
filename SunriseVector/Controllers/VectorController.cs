@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Globalization;
 using System.Linq;
 using System.Net;
 using System.Net.Http;
@@ -10,25 +11,43 @@ using SunriseVector.Models;
 
 namespace SunriseVector.Controllers
 {
+    [RoutePrefix("api/vector")]
     public class VectorController : ApiController
     {
-        Vector vector;
-        private ComputeVector dupa = new ComputeVector();
+
+        private readonly ComputeVector _compute = new ComputeVector();
         public static SunVector PrintSunVector = new SunVector();
+
         PositionCoordinate _data = new PositionCoordinate
         {
             UdtLocationdLatitude = 0,
             UdtLocationdLongitude = 0
         };
-        readonly DateTime _newData = new DateTime(2003, 1, 1, 1, 12, 0);
 
-        public Vector GetVector()
+        [Route("data")]
+        [HttpGet]
+        public SunVector GetVector(string time, int latitude, int longitude)
         {
-            dupa.SunPos(_newData,
-                        _data.UdtLocationdLatitude,
-                        _data.UdtLocationdLongitude);
-            
-            return vector;
+            string format = "yyyy-MM-ddTHH:mm:ss";
+
+            try
+            {
+                DateTime _newData = DateTime.ParseExact(time, format, new CultureInfo("en-US"));
+                
+                return _compute.SunPos(_newData,
+                    _data.UdtLocationdLatitude = latitude,
+                    _data.UdtLocationdLongitude = longitude);       
+
+            }
+            catch (Exception)
+            {
+                return null;
+                throw ;
+            }
+
         }
     }
 }
+
+
+

@@ -1,26 +1,22 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using Sunrise.Calculate;
-//http://www.pveducation.org/pvcdrom/properties-of-sunlight/sun-position-high-accuracy
+//http://www.pveducation.org/pvcdrom/suns-position-high-accuracy
 
 namespace Sunrise.Calculate
 {
     public class ComputeVector
     {
-        const double Pi = 3.14159265358979323846;
-        const double Twopi = 2 * Pi;
-        const double Rad = Pi / 180;
-        const double DEarthMeanRadius = 6371.01;
-        const double DAstronomicalUnit = 149597890;
+        private const double Pi = 3.14159265358979323846;
+        private const double Twopi = 2 * Pi;
+        private const double Rad = Pi / 180;
+        private const double DEarthMeanRadius = 6371.01;
+        private const double DAstronomicalUnit = 149597890;
         double _dDecimalHours;
         double _udtSunCoordinatesdAzimuth;
         public static SunVector PrintSunVector = new SunVector();
 
         public SunVector SunPos(DateTime date, double latitude, double longitude)
         {
+            
             double udtTimeiYear = date.Year;
             double udtTimeiMonth = date.Month;
             double udtTimeiDay = date.Day;

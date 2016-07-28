@@ -12,4 +12,6 @@ namespace SunriseVector.Models
         public decimal VectorZ { get; set; }
 
     }
+
+   
 }

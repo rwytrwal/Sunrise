@@ -1,9 +1,6 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using Sunrise;
+using System.Data;
+using System.Globalization;
 using Sunrise.Calculate;
 
 
@@ -11,7 +8,6 @@ namespace Sunrise
 {
     class ConsoleOut : ComputeVector
     {
-
         public void PrintOutput(decimal x, decimal y, decimal z)
         {
             Console.WriteLine("Sun's Position to High Accuracy");
@@ -23,17 +19,25 @@ namespace Sunrise
         {
             ConsoleOut runMain = new ConsoleOut();
             ComputeVector calculateVector = new ComputeVector();
-            DateTime newData = new DateTime(2003, 1, 1, 1, 12, 0);
-            PositionCoordinate data = new PositionCoordinate
+            DateTime calendarData = new DateTime(2003, 1, 1, 16, 0, 0);
+            Console.WriteLine("czas1" + calendarData.ToString());
+            Console.WriteLine(DateTime.Now.ToString("%K"));
+            calendarData = calendarData.ToUniversalTime();
+            Console.WriteLine("czas2" + calendarData.ToString());
+            TimeZone zone = TimeZone.CurrentTimeZone;
+            // Get offset.
+            TimeSpan offset = zone.GetUtcOffset(DateTime.Now);
+            calendarData.Hour = calendarData.Hour + offset;
+            PositionCoordinate positionCoordinate = new PositionCoordinate
             {
                 UdtLocationdLatitude = 0,
                 UdtLocationdLongitude = 0
             };
 
-            calculateVector.SunPos(newData,
-                        data.UdtLocationdLatitude,
-                        data.UdtLocationdLongitude);
-
+            calculateVector.SunPos(calendarData,
+                        positionCoordinate.UdtLocationdLatitude,
+                        positionCoordinate.UdtLocationdLongitude);
+            
             runMain.PrintOutput(PrintSunVector.X, PrintSunVector.Y, PrintSunVector.Z);
 
             Console.Read();
