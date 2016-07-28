@@ -11,10 +11,16 @@ namespace SunriseVector.Models
     public class Vector
     {
         /// <summary>
-        /// SunriseVector X,Y,Z
+        /// SunriseVector AzimutDecimal
         /// </summary>
         public decimal VectorX { get; set; }
+        /// <summary>
+        /// SunriseVector ZenithDecimal
+        /// </summary>        
         public decimal VectorY { get; set; }
+        /// <summary>
+        /// SunriseVector ElevationDecimal
+        /// </summary>        
         public decimal VectorZ { get; set; }
 
     }
