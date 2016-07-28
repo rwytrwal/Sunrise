@@ -6,6 +6,9 @@ using Sunrise.Calculate;
 
 namespace SunriseVector.Controllers
 {
+    /// <summary>
+    /// SunriseVector controller
+    /// </summary>
     [RoutePrefix("api/vector")]
     public class VectorController : ApiController
     {
@@ -18,7 +21,12 @@ namespace SunriseVector.Controllers
             UdtLocationdLatitude = 0,
             UdtLocationdLongitude = 0
         };
-
+        /// <summary>
+        /// Get DataTime, Locationd Latitude and Longitude
+        /// </summary>
+        /// <remarks>Return Sun Vectors</remarks>
+        /// <response code="200">OK</response>
+        /// <response code="204">Missing some parameters</response>
         [Route("data")]
         [HttpGet]
         public SunVector GetVector(string time, double latitude, double longitude)
@@ -40,6 +48,12 @@ namespace SunriseVector.Controllers
             }
 
         }
+        /// <summary>
+        /// Get DataTime, Locationd Latitude and Longitude
+        /// </summary>
+        /// <remarks>Return Sun Vectors</remarks>
+        /// <response code="200">OK</response>
+        /// <response code="204">Missing some parameters</response>
         [Route("data")]
         [HttpGet]
         public SunVector GetVector(double latitude, double longitude)
