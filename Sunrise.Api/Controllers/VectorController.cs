@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Globalization;
 using System.Web.Http;
 using Sunrise.Calculate;
@@ -30,13 +30,33 @@ namespace SunriseVector.Controllers
                 newData = newData.ToUniversalTime();
                 return _compute.SunPos(newData,
                     _data.UdtLocationdLatitude = latitude,
-                    _data.UdtLocationdLongitude = longitude);       
+                    _data.UdtLocationdLongitude = longitude);
 
             }
             catch (Exception)
             {
                 return null;
-                throw ;
+                throw;
+            }
+
+        }
+        [Route("data")]
+        [HttpGet]
+        public SunVector GetVector(double latitude, double longitude)
+        {
+            try
+            {
+                DateTime newData = DateTime.Now;
+                newData = newData.ToUniversalTime();
+                return _compute.SunPos(newData,
+                    _data.UdtLocationdLatitude = latitude,
+                    _data.UdtLocationdLongitude = longitude);
+
+            }
+            catch (Exception)
+            {
+                return null;
+                throw;
             }
 
         }
