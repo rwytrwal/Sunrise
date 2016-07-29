@@ -36,13 +36,16 @@ namespace SunriseVector.Controllers
         {
            
 
-            string isoFormatDate = "yyyy-MM-ddTHH:mm:ss";
+            string isoFormatDate = "yyyy-MM-ddTHH:mm:ss+ZZ:zz";
+
                 try
 
                 {
-
+                
                 DateTime newData = DateTime.ParseExact(time, isoFormatDate, new CultureInfo("en-US"));
-                    newData = newData.ToUniversalTime();
+                //TimeSpan a = new TimeSpan(Int32.Parse(timeZone), 0, 0);
+                //DateTimeOffset _newDateTimeOffset = new DateTimeOffset(newData.Year, newData.Month, newData.Day, newData.Hour, 0, 0, a);
+                newData = newData.ToUniversalTime();
                     return _compute.SunPos(newData,
                         _data.UdtLocationdLatitude = latitude,
                         _data.UdtLocationdLongitude = longitude);

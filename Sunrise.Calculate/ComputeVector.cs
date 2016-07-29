@@ -14,7 +14,7 @@ namespace Sunrise.Calculate
         double _udtSunCoordinatesdAzimuth;
         public static SunVector PrintSunVector = new SunVector();
 
-        public SunVector SunPos(DateTime date, double latitude, double longitude)
+        public SunVector SunPos(DateTimeOffset date, double latitude, double longitude)
         {
             if (latitude > 90 || latitude < -90)
             {

@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Globalization;
 using Sunrise.Calculate;
 
 
@@ -17,13 +18,15 @@ namespace Sunrise
         {
             ConsoleOut runMain = new ConsoleOut();
             ComputeVector calculateVector = new ComputeVector();
-            DateTime calendarData = new DateTime(2016, 7, 28, 16, 0, 0);
+            string isoFormatDate = "yyyy-MM-ddTHH:mm:sszzz";
+            TimeSpan a = new TimeSpan(-2, 0, 0);
+            DateTimeOffset calendarData = new DateTimeOffset(2016, 7, 28, 16, 0, 0, a);
+            string time = "2016-01-23T13:12:20+02:00";
+            DateTime newData = DateTime.ParseExact(time, isoFormatDate, new CultureInfo("en-US"));
+            Console.WriteLine("prasowany " + calendarData);
             calendarData = calendarData.ToUniversalTime();
-            string time;
-            time = DateTime.Now.Year.ToString() + "-0" + DateTime.Now.Month.ToString();
-            time += "-" + DateTime.Now.Day.ToString() + "T" + DateTime.Now.Hour.ToString();
-            time += ":" + DateTime.Now.Minute.ToString() + ":" + DateTime.Now.Second.ToString();
-            Console.WriteLine(time);
+            Console.WriteLine("uni22 " + newData);
+            Console.WriteLine("uni "+calendarData);
             PositionCoordinate positionCoordinate = new PositionCoordinate
             {
                 UdtLocationdLatitude = 0,
