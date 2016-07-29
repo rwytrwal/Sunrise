@@ -19,7 +19,11 @@ namespace Sunrise
             ComputeVector calculateVector = new ComputeVector();
             DateTime calendarData = new DateTime(2016, 7, 28, 16, 0, 0);
             calendarData = calendarData.ToUniversalTime();
-
+            string time;
+            time = DateTime.Now.Year.ToString() + "-0" + DateTime.Now.Month.ToString();
+            time += "-" + DateTime.Now.Day.ToString() + "T" + DateTime.Now.Hour.ToString();
+            time += ":" + DateTime.Now.Minute.ToString() + ":" + DateTime.Now.Second.ToString();
+            Console.WriteLine(time);
             PositionCoordinate positionCoordinate = new PositionCoordinate
             {
                 UdtLocationdLatitude = 0,

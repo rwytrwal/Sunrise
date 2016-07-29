@@ -29,7 +29,7 @@ namespace SunriseVector.Controllers
         /// <remarks>Return list of all products or exception</remarks>
         /// <response code="200">OK</response>
         /// <response code="204">Valid Parameters</response>
-        [Route("data")]
+        [Route("withdata")]
         [HttpGet]
         public SunVector GetVector(string time, double latitude, double longitude)
         {
@@ -60,7 +60,7 @@ namespace SunriseVector.Controllers
         /// <remarks>Return list of all products or exception</remarks>
         /// <response code="200">OK</response>
         /// <response code="204">Valid Parameters</response>
-        [Route("data")]
+        [Route("withoutdata")]
         [HttpGet]
         public SunVector GetVector(double latitude, double longitude)
         {
@@ -71,8 +71,7 @@ namespace SunriseVector.Controllers
                 return _compute.SunPos(newData,
                     _data.UdtLocationdLatitude = latitude,
                     _data.UdtLocationdLongitude = longitude);
-
-            }
+                }
             catch (Exception e)
             {
                 var resp = new HttpResponseMessage(HttpStatusCode.NotFound)

@@ -58,7 +58,7 @@
       <Project>{8383bb08-f882-4cf9-9aca-99ddcdef1e09}</Project>
       <Name>Sunrise.Calculate.Vector</Name>
     </ProjectReference>
-    <ProjectReference Include="..\SunriseVector\Sunrise.Api.csproj">
+    <ProjectReference Include="..\Sunrise.Api\Sunrise.Api.csproj">
       <Project>{12a44ba8-5289-4286-a502-27d3be4da292}</Project>
       <Name>Sunrise.Api</Name>
     </ProjectReference>
@@ -66,6 +66,9 @@
       <Project>{dfb944fc-46d2-4e1c-8de8-6f53b6d68b6b}</Project>
       <Name>Sunrise.Console</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="app.config" />
   </ItemGroup>
   <Choose>
     <When Condition="'$(VisualStudioVersion)' == '10.0' And '$(IsCodedUITest)' == 'True'">
