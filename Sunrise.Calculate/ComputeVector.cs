@@ -16,7 +16,16 @@ namespace Sunrise.Calculate
 
         public SunVector SunPos(DateTime date, double latitude, double longitude)
         {
-            
+            if (latitude > 90 || latitude < -90)
+            {
+                throw new System.ArgumentException("Parametr cannot be mor than 90 or less than -90");
+            }
+
+            if (longitude > 180 || longitude < -180)
+            {
+                throw new System.ArgumentException("Parametr cannot be mor than 180 or less than -180");
+            }
+
             double udtTimeiYear = date.Year;
             double udtTimeiMonth = date.Month;
             double udtTimeiDay = date.Day;
